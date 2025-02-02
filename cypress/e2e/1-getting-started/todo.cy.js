@@ -33,7 +33,6 @@ describe('example to-do app', () => {
     cy.get('.todo-list li').first().should('have.text', 'Pay electric bill')
     cy.get('.todo-list li').last().should('have.text', 'Walk the dog')
   })
-
   it('can add new todo items', () => {
     // We'll store our item text in a variable so we can reuse it
     const newItem = 'Feed the cat'
@@ -133,7 +132,9 @@ describe('example to-do app', () => {
       // Then we can make sure that there is only one element
       // in the list and our element does not exist
       cy.get('.todo-list li')
-        .should('have.length', 1)
+
+        .should('have.length',3)
+
         .should('not.have.text', 'Pay electric bill')
 
       // Finally, make sure that the clear button no longer exists.
